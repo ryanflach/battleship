@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-24T14:32:50-06:00">2016-05-24T14:32:50-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-24T14:36:18-06:00">2016-05-24T14:36:18-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">95.4%</span></span>
+    (<span class="covered_percent"><span class="green">94.44%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.11
+         1.83
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>3</b> files in total.
-    <b>87</b> relevant lines. 
-    <span class="green"><b>83</b> lines covered</span> and
+    <b>72</b> relevant lines. 
+    <span class="green"><b>68</b> lines covered</span> and
     <span class="red"><b>4</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -62,22 +62,22 @@
       
       <tr>
         <td class="strong"><a href="#c9b987e980e22349d02c2f4940b74abbea8f1480" class="src_link" title="lib/gameboard.rb">lib/gameboard.rb</a></td>
-        <td class="yellow strong">83.33 %</td>
-        <td>53</td>
-        <td>24</td>
-        <td>20</td>
+        <td class="red strong">77.78 %</td>
+        <td>41</td>
+        <td>18</td>
+        <td>14</td>
         <td>4</td>
-        <td>4.5</td>
+        <td>3.9</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#cd889a28ce8aa5936363cb4d06ccee6ff59874eb" class="src_link" title="test/gameboard_test.rb">test/gameboard_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>59</td>
-        <td>32</td>
-        <td>32</td>
+        <td>44</td>
+        <td>23</td>
+        <td>23</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.2</td>
       </tr>
       
     </tbody>
@@ -621,10 +621,10 @@
         <div class="source_table" id="c9b987e980e22349d02c2f4940b74abbea8f1480">
   <div class="header">
     <h3>lib/gameboard.rb</h3>
-    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <h4><span class="red">77.78 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>18</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
@@ -662,8 +662,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">    @valid_locations = %w(A1 A2 A3 A4 B1 B2 B3 B4</code>
         </li>
@@ -674,8 +674,8 @@
           <code class="ruby">                          C1 C2 C3 C4 D1 D2 D3 D4)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="8">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
           
           <code class="ruby">    @board = full_board</code>
         </li>
@@ -698,8 +698,8 @@
           <code class="ruby">  def header_and_footer</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="12">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
           
           <code class="ruby">    %w(+++++++++)</code>
         </li>
@@ -722,8 +722,8 @@
           <code class="ruby">  def column_labels</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="16">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="7" data-linenumber="16">
+          <span class="hits">7</span>
           
           <code class="ruby">    %w(. 1 2 3 4)</code>
         </li>
@@ -743,13 +743,13 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  def row_a</code>
+          <code class="ruby">  def row(letter)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="20">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="25" data-linenumber="20">
+          <span class="hits">25</span>
           
-          <code class="ruby">    [&#39;A&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
+          <code class="ruby">    [letter, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -767,184 +767,112 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">  def row_b</code>
+          <code class="ruby">  def full_board</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="24">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="6" data-linenumber="24">
+          <span class="hits">6</span>
           
-          <code class="ruby">    [&#39;B&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
+          <code class="ruby">    [header_and_footer,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">     column_labels,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     row(&#39;A&#39;),</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="27">
           
-          <code class="ruby">  def row_c</code>
+          
+          <code class="ruby">     row(&#39;B&#39;),</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="28">
-          <span class="hits">10</span>
+        <li class="never" data-hits="" data-linenumber="28">
           
-          <code class="ruby">    [&#39;C&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
+          
+          <code class="ruby">     row(&#39;C&#39;),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">     row(&#39;D&#39;),</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def row_d</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="32">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    [&#39;D&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def full_board</code>
-        </li>
-      
-        <li class="covered" data-hits="9" data-linenumber="36">
-          <span class="hits">9</span>
-          
-          <code class="ruby">    [header_and_footer,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">     column_labels,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">     row_a,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">     row_b,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">     row_c,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">     row_d,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
           <code class="ruby">     header_and_footer]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">   end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">  def ascii_board</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
           <code class="ruby">    board.each do |row|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
           <code class="ruby">      row.each do |item|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">        print item + &#39; &#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="50">
+        <li class="missed" data-hits="0" data-linenumber="38">
           
           
           <code class="ruby">      puts &#39;&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">end</code>
@@ -959,8 +887,8 @@
     <h3>test/gameboard_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
-      <span class="green"><b>32</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -998,8 +926,8 @@
           <code class="ruby">  def setup</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">    @board = GameBoard.new</code>
         </li>
@@ -1133,13 +1061,13 @@
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">  def test_it_has_a_row_a</code>
+          <code class="ruby">  def test_it_has_a_flexible_row_method</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    result = @board.row_a</code>
+          <code class="ruby">    result = @board.row(&#39;A&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
@@ -1163,160 +1091,70 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  def test_it_has_a_row_b</code>
+          <code class="ruby">  def test_it_has_a_full_board</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">    result = @board.row_b</code>
+          <code class="ruby">    result = @board.board</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">    assert_equal [&#39;B&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;], result</code>
+          <code class="ruby">    board = [[&#39;+++++++++&#39;],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">             [&#39;.&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;],</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def test_it_has_a_row_c</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    result = @board.row_c</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    assert_equal [&#39;C&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;], result</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def test_it_has_a_row_d</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    result = @board.row_d</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    assert_equal [&#39;D&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;], result</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def test_it_has_a_full_board</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    result = @board.board</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    board = [[&#39;+++++++++&#39;],</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby">             [&#39;.&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;],</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
           <code class="ruby">             [&#39;A&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">             [&#39;B&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">             [&#39;C&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">             [&#39;D&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">             [&#39;+++++++++&#39;]]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
           <code class="ruby">    assert_equal board, result</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">end</code>

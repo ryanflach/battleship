@@ -16,29 +16,17 @@ class GameBoard
     %w(. 1 2 3 4)
   end
 
-  def row_a
-    ['A', '', '', '', '']
-  end
-
-  def row_b
-    ['B', '', '', '', '']
-  end
-
-  def row_c
-    ['C', '', '', '', '']
-  end
-
-  def row_d
-    ['D', '', '', '', '']
+  def row(letter)
+    [letter, '', '', '', '']
   end
 
   def full_board
     [header_and_footer,
      column_labels,
-     row_a,
-     row_b,
-     row_c,
-     row_d,
+     row('A'),
+     row('B'),
+     row('C'),
+     row('D'),
      header_and_footer]
    end
 

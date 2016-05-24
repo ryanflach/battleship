@@ -25,24 +25,9 @@ class GameBoardTest < Minitest::Test
     assert_equal ['.', '1', '2', '3', '4'], result
   end
 
-  def test_it_has_a_row_a
-    result = @board.row_a
+  def test_it_has_a_flexible_row_method
+    result = @board.row('A')
     assert_equal ['A', '', '', '', ''], result
-  end
-
-  def test_it_has_a_row_b
-    result = @board.row_b
-    assert_equal ['B', '', '', '', ''], result
-  end
-
-  def test_it_has_a_row_c
-    result = @board.row_c
-    assert_equal ['C', '', '', '', ''], result
-  end
-
-  def test_it_has_a_row_d
-    result = @board.row_d
-    assert_equal ['D', '', '', '', ''], result
   end
 
   def test_it_has_a_full_board
