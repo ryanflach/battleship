@@ -35,8 +35,7 @@ Best of luck and have fun!"
 You now need to layout your two ships.
 The first is two units long and the
 second is three units long.
-The grid has A1 at the top left and D4 at the bottom right.
-"
+The grid has A1 at the top left and D4 at the bottom right.\n\n"
   assert_equal message, result
   end
 
@@ -49,8 +48,8 @@ The grid has A1 at the top left and D4 at the bottom right.
     assert_equal message, result
   end
 
-  def test_it_has_a_message_for_placement_instructions
-    result = Communication.placement_instructions
+  def test_it_has_a_message_for_additional_placement_instructions
+    result = Communication.additional_placement_instructions
     message = "Your entry should be separated by a space and in order. For example, for /
 a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
     assert_equal message, result

@@ -27,8 +27,7 @@ Best of luck and have fun!"
 You now need to layout your two ships.
 The first is two units long and the
 second is three units long.
-The grid has A1 at the top left and D4 at the bottom right.
-"
+The grid has A1 at the top left and D4 at the bottom right.\n\n"
   end
 
   def self.ship_placement(size_ship)
@@ -39,7 +38,7 @@ The grid has A1 at the top left and D4 at the bottom right.
     "Invalid: your input #{rule_violated}. Please try again.\n\n"
   end
 
-  def self.placement_instructions
+  def self.additional_placement_instructions
     "Your entry should be separated by a space and in order. For example, for /
 a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
   end
