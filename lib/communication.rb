@@ -11,15 +11,16 @@ class Communication
     "You are playing against a computer that is, although not incredibly \
 intelligent, very determined on sinking your ships.
 
-You and the computer will both place your ships on the game board. \
+You and the computer will both place your ships on the game board.
 After all ships are placed, you and the computer will take turns guessing \
-the location of your opponent's ship. You will do this using the grid \
-position. This is very similar to how you placed your ships, meaning that \
+the location of your opponent's ship
+You will do this using the grid position.
+This is very similar to how you place your ships, meaning that \
 if you want to guess the top left position, you would enter 'A1'.
 
 The game is over once the player has sunken all of their opponenets ships.
 
-Best of luck and have fun!"
+Best of luck and have fun!\n\n"
   end
 
   def self.ship_placement_instructions
