@@ -11,7 +11,7 @@ class GameBoardTest < Minitest::Test
   end
 
   def test_it_has_16_valid_placement_locations
-    result = @board.valid_placement_locations
+    result = @board.valid_locations
     assert_equal 16, result.size
   end
 
@@ -56,17 +56,4 @@ class GameBoardTest < Minitest::Test
              ['+++++++++']]
     assert_equal board, result
   end
-
-  def test_it_has_an_ascii_board
-    skip
-    result = @board.ascii_board
-    board = '+++++++++
-             . 1 2 3 4
-             A
-             B
-             C
-             D
-             +++++++++'
-    assert_equal board, result
- end
 end
