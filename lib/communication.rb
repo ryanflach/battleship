@@ -4,7 +4,7 @@ class Communication
   end
 
   def self.main_menu
-    "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
+    'Would you like to (p)lay, read the (i)nstructions, or (q)uit?'
   end
 
   def self.instructions
@@ -44,7 +44,7 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
   end
 
   def self.attack_prompt
-    "Please enter a position to fire on: "
+    'Please enter a position to fire on: '
   end
 
   def self.hit(position)
@@ -64,7 +64,7 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
   end
 
   def self.end_game(outcome, num_shots, time)
-    if outcome == "W"
+    if outcome == 'W'
       "Congratulations! You beat the computer in #{time / 60} minutes and \
 #{time % 60} seconds, and it only took you #{num_shots} shots!
 
@@ -78,7 +78,6 @@ Thanks for playing!"
   end
 
   def self.player_quits
-    "Thanks for playing. See you next time!"
+    'Thanks for playing. See you next time!'
   end
-
 end
