@@ -12,14 +12,15 @@ class PlayerInterface
       main_menu
     elsif selection == 'P' || selection == 'PLAY'
       puts Communication.ship_placement_instructions
-      ship_placement_input
+      first_ship = ship_placement(2)
+      second_ship = ship_placement(3)
     else
       puts Communication.invalid_entry('is not a valid choice')
       main_menu
     end
   end
 
-  def self.ship_placement_input
+  def self.ship_placement(ship_size)
     locations = []
     2.times do |ship|
       if ship == 0
@@ -36,6 +37,10 @@ class PlayerInterface
     end
     locations
   end
+
+  def self.ship_placement_input
+    location = gets.chomp.upcase
+
 
   def self.ship_placement_verification(input, ship_size)
     entries = input.split
