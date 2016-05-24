@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-23T20:47:35-06:00">2016-05-23T20:47:35-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-24T12:39:51-06:00">2016-05-24T12:39:51-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.1
+         6.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>31</b> relevant lines. 
-    <span class="green"><b>31</b> lines covered</span> and
+    <b>24</b> relevant lines. 
+    <span class="green"><b>24</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,13 +51,13 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#088512cc5204e00c6060fce5e2cf7d878ad241b6" class="src_link" title="lib/communication.rb">lib/communication.rb</a></td>
+        <td class="strong"><a href="#c9b987e980e22349d02c2f4940b74abbea8f1480" class="src_link" title="lib/gameboard.rb">lib/gameboard.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>84</td>
-        <td>31</td>
-        <td>31</td>
+        <td>53</td>
+        <td>24</td>
+        <td>24</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>6.6</td>
       </tr>
       
     </tbody>
@@ -76,13 +76,13 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="088512cc5204e00c6060fce5e2cf7d878ad241b6">
+        <div class="source_table" id="c9b987e980e22349d02c2f4940b74abbea8f1480">
   <div class="header">
-    <h3>lib/communication.rb</h3>
+    <h3>lib/gameboard.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>31</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -93,127 +93,127 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Communication</code>
+          <code class="ruby">class GameBoard</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.welcome_message</code>
+          <code class="ruby">  attr_accessor :valid_placement_locations,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">    &quot;Welcome to BATTLESHIP\n\n&quot;</code>
+          
+          <code class="ruby">                :board</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.main_menu</code>
+          <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="10" data-linenumber="6">
+          <span class="hits">10</span>
           
-          <code class="ruby">    &#39;Would you like to (p)lay, read the (i)nstructions, or (q)uit?&#39;</code>
+          <code class="ruby">    @valid_placement_locations = %w(A1 A2 A3 A4 B1 B2 B3 B4</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">                                    C1 C2 C3 C4 D1 D2 D3 D4)</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="8">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    @board = full_board</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.instructions</code>
+          <code class="ruby">  def header_and_footer</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="21" data-linenumber="12">
+          <span class="hits">21</span>
           
-          
-          <code class="ruby">    &quot;You are playing against a computer that is, although not incredibly \</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">intelligent, very determined on sinking your ships.</code>
+          <code class="ruby">    %w(+++++++++)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">You and the computer will both place your ships on the game board.</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">After all ships are placed, you and the computer will take turns guessing \</code>
+          <code class="ruby">  def column_labels</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="11" data-linenumber="16">
+          <span class="hits">11</span>
           
-          
-          <code class="ruby">the location of your opponent&#39;s ship</code>
+          <code class="ruby">    %w(. 1 2 3 4)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">You will do this using the grid position.</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">This is very similar to how you place your ships, meaning that \</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">if you want to guess the top left position, you would enter &#39;A1&#39;.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def row_a</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="20">
+          <span class="hits">11</span>
+          
+          <code class="ruby">    [&#39;A&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">The game is over once the player has sunken all of their opponenets ships.</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -225,370 +225,184 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">Best of luck and have fun!\n\n&quot;</code>
+          <code class="ruby">  def row_b</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="11" data-linenumber="24">
+          <span class="hits">11</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    [&#39;B&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.ship_placement_instructions</code>
+          <code class="ruby">  def row_c</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="11" data-linenumber="28">
+          <span class="hits">11</span>
           
-          
-          <code class="ruby">    &quot;I have laid out my ships on the grid.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">You now need to layout your two ships.</code>
+          <code class="ruby">    [&#39;C&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">The first is two units long and the</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">second is three units long.</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">The grid has A1 at the top left and D4 at the bottom right.\n\n&quot;</code>
+          <code class="ruby">  def row_d</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="11" data-linenumber="32">
+          <span class="hits">11</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    [&#39;D&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.ship_placement(size_ship)</code>
+          <code class="ruby">  def full_board</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="10" data-linenumber="36">
+          <span class="hits">10</span>
           
-          <code class="ruby">    &quot;Enter the squares for the #{size_ship} ship.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    [header_and_footer,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     column_labels,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="38">
           
-          <code class="ruby">  def self.invalid_entry(rule_violated)</code>
+          
+          <code class="ruby">     row_a,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="39">
           
-          <code class="ruby">    &quot;Invalid: your input #{rule_violated}. Please try again.\n\n&quot;</code>
+          
+          <code class="ruby">     row_b,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">     row_c,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">     row_d,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="42">
           
-          <code class="ruby">  def self.additional_placement_instructions</code>
+          
+          <code class="ruby">     header_and_footer]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">    &quot;Your entry should be separated by a space and in order. For example, for /</code>
+          <code class="ruby">   end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">a two-unit ship, you could enter &#39;A1 A2&#39;, or &#39;A3 B3&#39;, but not &#39;A1 A3&#39;&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.attack_prompt</code>
+          <code class="ruby">  def ascii_board</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">    &#39;Please enter a position to fire on: &#39;</code>
+          <code class="ruby">    board.each do |row|</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="47">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      row.each do |item|</code>
+        </li>
+      
+        <li class="covered" data-hits="27" data-linenumber="48">
+          <span class="hits">27</span>
+          
+          <code class="ruby">        print item + &#39; &#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="covered" data-hits="7" data-linenumber="50">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      puts &quot;&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.hit(position)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    &quot;Shot on #{position} was a hit!&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.miss(position)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    &quot;Shot on #{position} was a miss.&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.player_end_turn</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    &quot;Please press ENTER to end your turn.\n\n&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.sunken_ship(size)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    &quot;A #{size} ship has been sunk!&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.end_game(outcome, num_shots, time)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="68">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    if outcome == &#39;W&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="69">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      &quot;Congratulations! You beat the computer in #{time / 60} minutes and \</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">#{time % 60} seconds, and it only took you #{num_shots} shots!</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">Thanks for playing!&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="74">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      &quot;So sorry, you lost. The computer beat you in #{time / 60} minutes and \</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">#{time % 60} seconds, but it did take them #{num_shots} shots to do it.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">Thanks for playing!&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def self.player_quits</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    &#39;Thanks for playing. See you next time!&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">end</code>
