@@ -12,8 +12,10 @@ class Player
   def place_ship(ship_size, locations)
     location = locations.split
     location.each do |place|
+      #Verify all valid locations
       row = transpose_letter(place[0])
       boards.my_ships.board[row][place[1].to_i] = ship_size
+      boards.my_ships.valid_locations.delete(place)
     end
     boards.my_ships.board
   end

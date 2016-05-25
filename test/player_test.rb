@@ -30,7 +30,13 @@ class PlayerTest < Minitest::Test
     assert_equal board, result
   end
 
-  def test_it_can_track_its_shots_taken
+  def test_it_removes_a_location_from_valid_locations_once_occupied_with_a_ship
+    result = @player.place_ship(2, 'A1 A2')
+    refute @player.boards.my_ships.valid_locations.include?('A1')
+    refute @player.boards.my_ships.valid_locations.include?('A2')
+  end
+
+  def test_it_can_count_its_shots_taken
     @player.fire_shot('A2')
     assert_equal 1, @player.shots_taken
   end
