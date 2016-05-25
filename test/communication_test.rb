@@ -19,12 +19,13 @@ intelligent, very determined on sinking your ships.
 
 You and the computer will both place your ships on the game board.
 After all ships are placed, you and the computer will take turns guessing \
-the location of your opponent's ship
+the location of each other's ships.
 You will do this using the grid position.
 This is very similar to how you place your ships, meaning that \
 if you want to guess the top left position, you would enter 'A1'.
 
-The game is over once the player has sunken all of their opponenets ships.
+The game is over once a player (or computer) has sunken all of their \
+opponent's ships.
 
 Best of luck and have fun!\n\n"
     assert_equal message, result
@@ -58,7 +59,8 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
 
   def test_it_has_a_flexible_message_for_an_invalid_entry
     result = Communication.invalid_entry('is outside the range of the board')
-    message = "Invalid: your input is outside the range of the board. Please try again.\n\n"
+    message = "Invalid: your input is outside the range of the board.
+Please try again.\n\n"
     assert_equal message, result
   end
 

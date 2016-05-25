@@ -13,12 +13,13 @@ intelligent, very determined on sinking your ships.
 
 You and the computer will both place your ships on the game board.
 After all ships are placed, you and the computer will take turns guessing \
-the location of your opponent's ship
+the location of each other's ships.
 You will do this using the grid position.
 This is very similar to how you place your ships, meaning that \
 if you want to guess the top left position, you would enter 'A1'.
 
-The game is over once the player has sunken all of their opponenets ships.
+The game is over once a player (or computer) has sunken all of their \
+opponent's ships.
 
 Best of luck and have fun!\n\n"
   end
@@ -36,7 +37,8 @@ The grid has A1 at the top left and D4 at the bottom right.\n\n"
   end
 
   def self.invalid_entry(rule_violated)
-    "Invalid: your input #{rule_violated}. Please try again.\n\n"
+    "Invalid: your input #{rule_violated}.
+Please try again.\n\n"
   end
 
   def self.additional_placement_instructions
