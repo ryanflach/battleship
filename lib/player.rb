@@ -29,11 +29,11 @@ class Player
   def transpose_letter(letter)
     index = 2
     if letter == 'B'
-      index += 1
+      index = 3
     elsif letter == 'C'
-      index += 2
+      index = 4
     elsif letter == 'D'
-      index += 3
+      index = 5
     else
       index
     end
