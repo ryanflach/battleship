@@ -1,21 +1,19 @@
 require './lib/communication'
-require './lib/player'
 require './lib/validation'
 
 class PlayerInterface
   extend Validation
 
-  def self.main_menu
+  def self.main_menu(player)
     puts Communication.main_menu
     selection = gets.chomp.upcase
-    if selection == 'Q' || selection == 'QUIT'
+    if quitting?
       puts Communication.player_quits
     elsif selection == 'I' || selection == 'INSTRUCTIONS'
       puts Communication.instructions
       sleep(2)
       main_menu
     elsif selection == 'P' || selection == 'PLAY'
-      player = Player.new
       puts Communication.ship_placement_instructions
       first_ship = ship_placement(2, player)
       player.place_ship(2, first_ship)
@@ -31,18 +29,27 @@ class PlayerInterface
     locations = []
     puts Communication.ship_placement("#{ship_size}-unit")
     location = gets.chomp.upcase
-    # binding.pry
-    unless ship_placement_verification(location, ship_size, player)
+    if ship_placement_verification(location, ship_size, player)
+      ship_placement(ship_size, player)
+    else
       locations << location
       return locations.sort.join(' ')
+    end
+  end
+
+  def self.shoot_sequence(player)
+    puts Communication.attack_prompt
+    location = gets.chomp.upcase
+    if shot_verification(location, player)
+      shoot_sequence(player)
     else
-      ship_placement(ship_size, player)
+      return location
     end
   end
 
   def self.ship_placement_verification(input, ship_size, player)
     entries = input.split
-    if input == 'Q' || input == 'QUIT'
+    if quitting?(input)
       puts Communication.player_quits
       exit
     elsif entries.size != ship_size
@@ -70,7 +77,34 @@ otherwise non-adjacent")
     end
   end
 
+  def shot_verification(location, player)
+    entry = location.split
+    if quitting?(location)
+      puts Communication.player_quits
+      exit
+    elsif entry.size != 1
+      invalid_try_again('should only be one location')
+      return true
+    elsif position_wrong_format_or_outside_range?(entry)
+      invalid_try_again("should start with a letter \
+between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
+    elsif already_guessed?(location, player)
+      invalid_try_again('is a location you have already guessed')
+      return true
+    else
+      return false
+    end
+  end
+
+  def self.already_guessed?(input, player)
+    !player.boards.my_hits_and_misses.valid_locations.include?(input)
+  end
+
   def self.invalid_try_again(reason)
     puts Communication.invalid_entry(reason)
+  end
+
+  def self.quitting?(input)
+    true if input == 'Q' || input == 'QUIT'
   end
 end

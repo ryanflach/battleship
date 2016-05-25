@@ -20,10 +20,9 @@ class Player
   end
 
   def fire_shot(location)
+    # boards.my_hits_and_misses.
     @shots_taken += 1
   end
-
-  private
 
   def transpose_letter(letter)
     index = 2
