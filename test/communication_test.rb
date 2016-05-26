@@ -112,4 +112,16 @@ Thanks for playing!"
     message = 'Thanks for playing. See you next time!'
     assert_equal message, result
   end
+
+  def test_it_has_a_message_to_announce_the_computer_turn
+    result = Communication.computer_turn
+    message = "The computer takes a shot...\n"
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_announcing_the_computer_hit_and_miss_board
+    result = Communication.computer_board
+    message = "The computer's hits and misses are as follows:"
+    assert_equal message, result
+  end
 end

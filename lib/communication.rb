@@ -66,6 +66,14 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
     "A #{size} ship has been sunk!"
   end
 
+  def self.computer_turn
+    "The computer takes a shot...\n"
+  end
+
+  def self.computer_board
+    "The computer's hits and misses are as follows:"
+  end
+
   def self.end_game(outcome, num_shots, time)
     if outcome == 'W'
       "Congratulations! You beat the computer in #{time / 60} minutes and \
