@@ -8,8 +8,7 @@ class PlayerInterface
     puts Communication.main_menu
     selection = gets.chomp.upcase
     if quitting?(selection)
-      puts Communication.player_quits
-      exit
+      quit
     elsif selection == 'I' || selection == 'INSTRUCTIONS'
       puts Communication.instructions
       sleep(2)
@@ -21,7 +20,7 @@ class PlayerInterface
       second_ship = ship_placement(3, player)
       player.place_ship(3, second_ship)
     else
-      puts Communication.invalid_entry('is not a valid choice')
+      puts Communication.invalid_entry(Communication.not_valid)
       main_menu(player)
     end
   end
@@ -52,7 +51,7 @@ class PlayerInterface
     puts Communication.player_end_turn
     input = gets.chomp
     if input != ''
-      puts Communication.invalid_entry('should only be the ENTER key')
+      puts Communication.invalid_entry(Communication.enter_only)
       end_turn
     end
   end
@@ -61,25 +60,21 @@ class PlayerInterface
     outcome = true
     entries = input.split
     if quitting?(input)
-      puts Communication.player_quits
-      exit
+      quit
     elsif entries.size != ship_size
-      invalid_try_again('is not the correct length')
+      invalid_try_again(Communication.incorrect_length)
     elsif too_many_letters?(entries)
-      invalid_try_again("has too many characters - try something like 'B2' \
-for each location")
+      invalid_try_again(Communication.too_many_chars)
     elsif position_wrong_format_or_outside_range?(entries)
-      invalid_try_again("should start with a letter \
-between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
+      invalid_try_again(Communication.format_or_range_issue)
     elsif positions_include_duplicates?(entries)
-      invalid_try_again('cannot include duplicates')
+      invalid_try_again(Communication.duplicates)
     elsif position_wraps?(entries)
-      invalid_try_again('wraps around the board')
+      invalid_try_again(Communication.wraps)
     elsif position_taken?(entries, player)
-      invalid_try_again("is a location that's already taken")
+      invalid_try_again(Communication.already_taken)
     elsif positions_not_adjacent?(entries)
-      invalid_try_again("includes locations that are diagonal or \
-otherwise non-adjacent")
+      invalid_try_again(Communication.not_adjacent)
     else
       outcome = false
     end
@@ -90,17 +85,15 @@ otherwise non-adjacent")
     outcome = true
     entry = location.split
     if quitting?(location)
-      puts Communication.player_quits
-      exit
+      quit
     elsif entry.size != 1
-      invalid_try_again('should only be one location')
+      invalid_try_again(Communication.shot_locs)
     elsif location.length != 2
-      invalid_try_again('should be two characters')
+      invalid_try_again(Communication.shot_length)
     elsif position_wrong_format_or_outside_range?(entry)
-      invalid_try_again("should start with a letter \
-between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
+      invalid_try_again(Communication.format_or_range_issue)
     elsif already_guessed?(location, player)
-      invalid_try_again('is a location you have already guessed')
+      invalid_try_again(Communication.already_guessed)
     else
       outcome = false
     end
@@ -113,5 +106,10 @@ between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
 
   def self.quitting?(input)
     true if input == 'Q' || input == 'QUIT'
+  end
+
+  def self.quit
+    puts Communication.player_quits
+    exit
   end
 end

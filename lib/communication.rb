@@ -99,4 +99,54 @@ Thanks for playing!"
   def self.player_quits
     'Thanks for playing. See you next time!'
   end
+
+  def self.too_many_chars
+    "includes at least one location with too many characters - try something \
+like 'B2' for each location"
+  end
+
+  def self.format_or_range_issue
+    "should start with a letter between 'A' and 'D' and end with a number \
+between '1' and '4', i.e. 'A3'"
+  end
+
+  def self.duplicates
+    'cannot include duplicates'
+  end
+
+  def self.wraps
+    'wraps around the board'
+  end
+
+  def self.already_taken
+    "is a location that's already taken"
+  end
+
+  def self.not_adjacent
+    "includes locations that are diagonal or otherwise non-adjacent"
+  end
+
+  def self.incorrect_length
+    'is not the correct length'
+  end
+
+  def self.shot_locs
+    'should only be one location'
+  end
+
+  def self.shot_length
+    'should only be two characters'
+  end
+
+  def self.already_guessed
+    'is a location you have already guessed'
+  end
+
+  def self.enter_only
+    'should only be the ENTER key'
+  end
+
+  def self.not_valid
+    'is not a valid choice'
+  end
 end
