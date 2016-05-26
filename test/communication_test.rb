@@ -136,4 +136,78 @@ Thanks for playing!"
     message = 'After that guess, your hits and misses are as follows:'
     assert_equal message, result
   end
+
+  def test_it_has_a_message_for_an_invalid_choice
+    result = Communication.not_valid
+    message = 'is not a valid choice'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_asking_for_the_ENTER_key_only
+    result = Communication.enter_only
+    message = 'should only be the ENTER key'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_a_location_already_guessed
+    result = Communication.already_guessed
+    message = 'is a location you have already guessed'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_incorrect_shot_length
+    result = Communication.shot_length
+    message = 'should only be two characters'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_too_many_locations
+    result = Communication.shot_locs
+    message = 'should only be one location'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_an_incorrect_length
+    result = Communication.incorrect_length
+    message = 'is not the correct length'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_placement_that_is_not_adjacent
+    result = Communication.not_adjacent
+    message = "includes locations that are diagonal or otherwise non-adjacent"
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_a_location_that_is_already_taken
+    result = Communication.already_taken
+    message = "is a location that's already taken"
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_positions_that_wrap_the_board
+    result = Communication.wraps
+    message = 'wraps around the board'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_duplicates
+    result = Communication.duplicates
+    message = 'cannot include duplicates'
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_format_or_range_issues
+    result = Communication.format_or_range_issue
+    message = "should start with a letter between 'A' and 'D' and end with a number \
+between '1' and '4', i.e. 'A3'"
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_too_many_characters
+    result = Communication.too_many_chars
+    message = "includes at least one location with too many characters - try something \
+like 'B2' for each location"
+    assert_equal message, result
+  end
 end
