@@ -37,5 +37,6 @@ class GameBoard
       end
       puts ''
     end
+    puts "\n\n"
   end
 end

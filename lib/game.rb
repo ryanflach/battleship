@@ -113,14 +113,18 @@ class Game
   end
 
   def human_turn
+    puts Communication.current_player_board
     display_map(human)
     shoot_sequence(human)
+    puts Communication.updated_player_board
     display_map(human)
     PlayerInterface.end_turn
   end
 
   def computer_turn
+    puts Communication.computer_turn
     shoot_sequence(computer)
+    puts Communication.computer_board
     display_map(computer)
   end
 

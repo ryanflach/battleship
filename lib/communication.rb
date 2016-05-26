@@ -51,11 +51,11 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
   end
 
   def self.hit(position)
-    "Shot on #{position} was a hit!"
+    "Shot on #{position} was a hit!\n\n"
   end
 
   def self.miss(position)
-    "Shot on #{position} was a miss."
+    "Shot on #{position} was a miss.\n\n"
   end
 
   def self.player_end_turn
@@ -68,6 +68,14 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
 
   def self.computer_turn
     "The computer takes a shot...\n"
+  end
+
+  def self.current_player_board
+    "Here's your current board tracking your hits and misses:"
+  end
+
+  def self.updated_player_board
+    "After that guess, your hits and misses are as follows:"
   end
 
   def self.computer_board

@@ -72,12 +72,12 @@ Please try again.\n\n"
 
   def test_it_has_a_flexible_message_for_a_hit
     result = Communication.hit('A3')
-    assert_equal 'Shot on A3 was a hit!', result
+    assert_equal "Shot on A3 was a hit!\n\n", result
   end
 
   def test_it_has_a_flexible_message_for_a_miss
     result = Communication.miss('B4')
-    assert_equal 'Shot on B4 was a miss.', result
+    assert_equal "Shot on B4 was a miss.\n\n", result
   end
 
   def test_it_has_a_message_to_prompt_the_player_to_end_their_turn
@@ -122,6 +122,18 @@ Thanks for playing!"
   def test_it_has_a_message_announcing_the_computer_hit_and_miss_board
     result = Communication.computer_board
     message = "The computer's hits and misses are as follows:"
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_announcing_the_player_hit_and_miss_board
+    result = Communication.current_player_board
+    message = "Here's your current board tracking your hits and misses:"
+    assert_equal message, result
+  end
+
+  def test_it_has_a_message_for_the_updated_player_hit_and_miss_board
+    result = Communication.updated_player_board
+    message = 'After that guess, your hits and misses are as follows:'
     assert_equal message, result
   end
 end
