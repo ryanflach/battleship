@@ -89,4 +89,13 @@ class ValidationTest < Minitest::Test
     result = positions_not_adjacent?(['A2', 'A3'])
     refute result
   end
+
+  def test_it_can_tell_if_a_location_has_already_been_guessed
+    player = Player.new
+    result = already_guessed?('A1', player)
+    refute result
+    player.boards.my_hits_and_misses.valid_locations.delete('A1')
+    result = already_guessed?('A1', player)
+    assert result
+  end
 end

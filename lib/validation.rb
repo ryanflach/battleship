@@ -84,4 +84,10 @@ module Validation
     end
     outcome
   end
+
+  def already_guessed?(input, player)
+    !player.boards.my_hits_and_misses.valid_locations.include?(input)
+  end
+
+
 end

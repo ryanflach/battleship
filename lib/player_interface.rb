@@ -51,11 +51,10 @@ class PlayerInterface
     puts Communication.player_end_turn
     input = gets.chomp
     if input != ''
-      puts Communication.invalid_entry("should only be the ENTER key")
+      puts Communication.invalid_entry('should only be the ENTER key')
       end_turn
     end
   end
-
 
   def self.ship_placement_verification(input, ship_size, player)
     entries = input.split
@@ -104,10 +103,6 @@ between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
     else
       return false
     end
-  end
-
-  def self.already_guessed?(input, player)
-    !player.boards.my_hits_and_misses.valid_locations.include?(input)
   end
 
   def self.invalid_try_again(reason)
