@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-25T20:39:01-06:00">2016-05-25T20:39:01-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-25T20:51:35-06:00">2016-05-25T20:51:35-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,13 +25,13 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.27
+         3.91
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>12</b> files in total.
+    <b>11</b> files in total.
     <b>343</b> relevant lines. 
     <span class="green"><b>335</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
@@ -67,7 +67,7 @@
         <td>21</td>
         <td>21</td>
         <td>0</td>
-        <td>6.2</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>7.7</td>
+        <td>7.8</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>53</td>
         <td>50</td>
         <td>3</td>
-        <td>6.2</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -118,16 +118,6 @@
         <td>30</td>
         <td>0</td>
         <td>1.2</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#40971bf3951e33de7f36efc5e3b80e6962da29e3" class="src_link" title="test/game_test.rb">test/game_test.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.0</td>
       </tr>
       
       <tr>
@@ -950,8 +940,8 @@
           <code class="ruby">  def randomly_select_location</code>
         </li>
       
-        <li class="covered" data-hits="41" data-linenumber="21">
-          <span class="hits">41</span>
+        <li class="covered" data-hits="23" data-linenumber="21">
+          <span class="hits">23</span>
           
           <code class="ruby">    boards.my_ships.valid_locations.sample</code>
         </li>
@@ -986,8 +976,8 @@
           <code class="ruby">    until all_adjacent_locations(previous_location).include?(next_location)</code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="27">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="18" data-linenumber="27">
+          <span class="hits">18</span>
           
           <code class="ruby">      next_location = randomly_select_location</code>
         </li>
@@ -1610,32 +1600,32 @@
           <code class="ruby">    if letter == &#39;B&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">      index = 3</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="21">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="18" data-linenumber="21">
+          <span class="hits">18</span>
           
           <code class="ruby">    elsif letter == &#39;C&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="22">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="4" data-linenumber="22">
+          <span class="hits">4</span>
           
           <code class="ruby">      index = 4</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="23">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="14" data-linenumber="23">
+          <span class="hits">14</span>
           
           <code class="ruby">    elsif letter == &#39;D&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="24">
+          <span class="hits">4</span>
           
           <code class="ruby">      index = 5</code>
         </li>
@@ -1646,8 +1636,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="26">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="10" data-linenumber="26">
+          <span class="hits">10</span>
           
           <code class="ruby">      index</code>
         </li>
@@ -1700,32 +1690,32 @@
           <code class="ruby">  def all_adjacent_locations(previous_location)</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="3">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="26" data-linenumber="3">
+          <span class="hits">26</span>
           
           <code class="ruby">    up_letter = &quot;#{previous_location[0].next}#{previous_location[1]}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="4">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="26" data-linenumber="4">
+          <span class="hits">26</span>
           
           <code class="ruby">    up_number = &quot;#{previous_location[0]}#{previous_location[1].next}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="5">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="26" data-linenumber="5">
+          <span class="hits">26</span>
           
           <code class="ruby">    down_letter = &quot;#{(previous_location[0].ord - 1).chr}#{previous_location[1]}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="6">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="26" data-linenumber="6">
+          <span class="hits">26</span>
           
           <code class="ruby">    down_number = &quot;#{previous_location[0]}#{(previous_location[1].ord - 1).chr}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="7">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="26" data-linenumber="7">
+          <span class="hits">26</span>
           
           <code class="ruby">    possibilities = [up_letter, up_number, down_letter, down_number]</code>
         </li>
@@ -1778,8 +1768,8 @@
           <code class="ruby">    if existing_locations[0][0] == existing_locations[1][0]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="16">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="16">
+          <span class="hits">5</span>
           
           <code class="ruby">      horizontal_placement(existing_locations)</code>
         </li>
@@ -1790,8 +1780,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="18">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
           
           <code class="ruby">      vertical_placement(existing_locations)</code>
         </li>
@@ -1820,14 +1810,14 @@
           <code class="ruby">  def horizontal_placement(existing_locations)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="23">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="23">
+          <span class="hits">5</span>
           
           <code class="ruby">    if existing_locations[0][1] == &#39;1&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
           
           <code class="ruby">      final_location = existing_locations[0][0] + &#39;3&#39;</code>
         </li>
@@ -1880,14 +1870,14 @@
           <code class="ruby">  def vertical_placement(existing_locations)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="33">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="33">
+          <span class="hits">3</span>
           
           <code class="ruby">    if existing_locations[0][0] == &#39;A&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="34">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
           
           <code class="ruby">      final_location = &#39;C&#39; + existing_locations[0][1]</code>
         </li>
@@ -2533,24 +2523,6 @@
           
           <code class="ruby">end</code>
         </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="40971bf3951e33de7f36efc5e3b80e6962da29e3">
-  <div class="header">
-    <h3>test/game_test.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>0</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
       
     </ol>
   </pre>
