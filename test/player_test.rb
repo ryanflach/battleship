@@ -10,6 +10,14 @@ class PlayerTest < Minitest::Test
     assert_equal 0, @player.shots_taken
   end
 
+  def test_it_tracks_hits_to_two_unit_ship_and_defaults_to_0
+    assert_equal 0, @player.two_unit_ship_hits_earned
+  end
+
+  def test_it_tracks_hits_to_three_unit_ship_and_defaults_to_0
+    assert_equal 0, @player.three_unit_ship_hits_earned
+  end
+
   def test_it_has_its_own_player_boards
     assert_instance_of PlayerBoards, @player.boards
   end
@@ -36,8 +44,9 @@ class PlayerTest < Minitest::Test
     refute @player.boards.my_ships.valid_locations.include?('A2')
   end
 
-  def test_it_can_count_its_shots_taken
+  def test_it_can_fire_a_shot_and_remove_that_location_from_valid_hit_misses_locations
     @player.fire_shot('A2')
-    assert_equal 1, @player.shots_taken
+    result = @player.boards.my_hits_and_misses.valid_locations
+    refute result.include?('A2')
   end
 end
