@@ -9,6 +9,7 @@ class PlayerInterface
     selection = gets.chomp.upcase
     if quitting?(selection)
       puts Communication.player_quits
+      exit
     elsif selection == 'I' || selection == 'INSTRUCTIONS'
       puts Communication.instructions
       sleep(2)
@@ -64,6 +65,9 @@ class PlayerInterface
       exit
     elsif entries.size != ship_size
       invalid_try_again('is not the correct length')
+    elsif too_many_letters?(entries)
+      invalid_try_again("has too many characters - try something like 'B2' \
+for each location")
     elsif position_wrong_format_or_outside_range?(entries)
       invalid_try_again("should start with a letter \
 between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")

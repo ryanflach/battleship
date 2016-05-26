@@ -76,7 +76,7 @@ module Validation
     else
       index = 0
       while index < locations.size - 1
-        if !all_adjacent_locations(locations[index]).include?(locations[index + 1])
+        unless all_adjacent_locations(locations[index]).include?(locations[index + 1])
           outcome = true
         end
         index += 1
@@ -89,5 +89,7 @@ module Validation
     !player.boards.my_hits_and_misses.valid_locations.include?(input)
   end
 
-
+  def too_many_letters?(locations)
+    locations.any? { |place| place.length > 2}
+  end
 end

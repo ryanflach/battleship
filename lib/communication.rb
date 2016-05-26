@@ -75,7 +75,7 @@ a two-unit ship, you could enter 'A1 A2', or 'A3 B3', but not 'A1 A3'"
   end
 
   def self.updated_player_board
-    "After that guess, your hits and misses are as follows:"
+    'After that guess, your hits and misses are as follows:'
   end
 
   def self.computer_board

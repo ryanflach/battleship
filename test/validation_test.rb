@@ -84,9 +84,9 @@ class ValidationTest < Minitest::Test
   end
 
   def test_it_can_tell_if_inputs_are_diagnonal_or_non_adjacent
-    result = positions_not_adjacent?(['A2', 'C3'])
+    result = positions_not_adjacent?(%w(A2 C3))
     assert result
-    result = positions_not_adjacent?(['A2', 'A3'])
+    result = positions_not_adjacent?(%w(A2 A3))
     refute result
   end
 
@@ -97,5 +97,12 @@ class ValidationTest < Minitest::Test
     player.boards.my_hits_and_misses.valid_locations.delete('A1')
     result = already_guessed?('A1', player)
     assert result
+  end
+
+  def test_it_can_determine_if_a_location_has_too_many_chars
+    result = too_many_letters?(["A43", "A2"])
+    assert result
+    result = too_many_letters?(["A2", "B2"])
+    refute result
   end
 end
