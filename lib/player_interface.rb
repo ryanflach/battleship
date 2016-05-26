@@ -7,7 +7,7 @@ class PlayerInterface
   def self.main_menu(player)
     puts Communication.main_menu
     selection = gets.chomp.upcase
-    if quitting?
+    if quitting?(selection)
       puts Communication.player_quits
     elsif selection == 'I' || selection == 'INSTRUCTIONS'
       puts Communication.instructions
@@ -47,6 +47,16 @@ class PlayerInterface
     end
   end
 
+  def self.end_turn
+    puts Communication.player_end_turn
+    input = gets.chomp
+    if input != ''
+      puts Communication.invalid_entry("should only be the ENTER key")
+      end_turn
+    end
+  end
+
+
   def self.ship_placement_verification(input, ship_size, player)
     entries = input.split
     if quitting?(input)
@@ -77,7 +87,7 @@ otherwise non-adjacent")
     end
   end
 
-  def shot_verification(location, player)
+  def self.shot_verification(location, player)
     entry = location.split
     if quitting?(location)
       puts Communication.player_quits
