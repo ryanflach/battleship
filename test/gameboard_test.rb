@@ -27,17 +27,17 @@ class GameBoardTest < Minitest::Test
 
   def test_it_has_a_flexible_row_method
     result = @board.row('A')
-    assert_equal ['A', '', '', '', ''], result
+    assert_equal ['A', ' ', ' ', ' ', ' '], result
   end
 
   def test_it_has_a_full_board
     result = @board.board
     board = [['+++++++++'],
              ['.', '1', '2', '3', '4'],
-             ['A', '', '', '', ''],
-             ['B', '', '', '', ''],
-             ['C', '', '', '', ''],
-             ['D', '', '', '', ''],
+             ['A', ' ', ' ', ' ', ' '],
+             ['B', ' ', ' ', ' ', ' '],
+             ['C', ' ', ' ', ' ', ' '],
+             ['D', ' ', ' ', ' ', ' '],
              ['+++++++++']]
     assert_equal board, result
   end

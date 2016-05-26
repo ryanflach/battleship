@@ -21,8 +21,6 @@ class Game
 
   def main_game
     start_time = Time.now
-    human_turn
-    computer_turn
     while ships_left?(human) && ships_left?(computer)
       human_turn
       if ships_left?(computer)
@@ -50,26 +48,35 @@ class Game
   end
 
   def update_map_and_hit_report(location, player)
+    if player == human
+      opponent = computer
+    else
+      opponent = human
+    end
     index = find_map_index(location[0])
-    map_location = find_contents_at_location(location, player)
-    if map_location == 2 && player.two_unit_ship_hits_earned == 1
+    map_location = find_contents_at_location(location, opponent)
+    if map_location == "2" && player.two_unit_ship_hits_earned == 1
       player.boards.my_hits_and_misses.board[index][location[1].to_i] = 'H'
-      player.two_unit_ship_hits_taken += 1
+      player.two_unit_ship_hits_earned += 1
       puts Communication.hit(location)
       puts Communication.sunken_ship("two-unit")
-    elsif map_location == 3 && player.three_unit_ship_hits_earned == 2
+      remove_ship_location_on_hit(location, player)
+    elsif map_location == "3" && player.three_unit_ship_hits_earned == 2
       player.boards.my_hits_and_misses.board[index][location[1].to_i] = 'H'
-      player.three_unit_ship_hits_taken += 1
+      player.three_unit_ship_hits_earned += 1
       puts Communication.hit(location)
       puts Communication.sunken_ship("three-unit")
-    elsif map_location == 2
+      remove_ship_location_on_hit(location, player)
+    elsif map_location == "2"
       puts Communication.hit(location)
       player.boards.my_hits_and_misses.board[index][location[1].to_i] = 'H'
-      player.two_unit_ship_hits_taken += 1
-    elsif map_location == 3
+      player.two_unit_ship_hits_earned += 1
+      remove_ship_location_on_hit(location, player)
+    elsif map_location == "3"
       puts Communication.hit(location)
       player.boards.my_hits_and_misses.board[index][location[1].to_i] = 'H'
-      player.three_unit_ship_hits_taken += 1
+      player.three_unit_ship_hits_earned += 1
+      remove_ship_location_on_hit(location, player)
     else
       puts Communication.miss(location)
       player.boards.my_hits_and_misses.board[index][location[1].to_i] = 'M'
@@ -84,9 +91,9 @@ class Game
   def remove_ship_location_on_hit(location, player)
     map_index = find_map_index(location)
     if player == human
-      computer.boards.my_ships.board[map_index][location[1].to_i] = ""
+      computer.boards.my_ships.board[map_index][location[1].to_i] = " "
     else
-      human.boards.my_ships.board[map_index][location[1].to_i] = ""
+      human.boards.my_ships.board[map_index][location[1].to_i] = " "
     end
   end
 
@@ -95,8 +102,14 @@ class Game
   end
 
   def ships_left?(player)
-    player_board = player.boards.my_ships.board
-    player_board.include?(2) || player_board.include?(3)
+    outcome = false
+    player_board_range = player.boards.my_ships.board[2..5]
+    player_board_range.each do |row|
+      if row.include?("2") || row.include?("3")
+        outcome = true
+      end
+    end
+    outcome
   end
 
   def human_turn
@@ -106,9 +119,29 @@ class Game
     PlayerInterface.end_turn
   end
 
+  def computer_turn
+    shoot_sequence(computer)
+    display_map(computer)
+  end
+
   def end_game(starting_time)
+    outcome = player_outcome(human)
+    if outcome == 'W'
+      shots = human.shots_taken
+    else
+      shots = computer.shots_taken
+    end
     end_time = Time.now
-    final_time = end_time - starting_time
+    final_time = (end_time - starting_time).to_i
+    puts Communication.end_game(outcome, shots, final_time)
+  end
+
+  def player_outcome(human_player)
+    if ships_left?(human_player)
+      'W'
+    else
+      'L'
+    end
   end
 
 end

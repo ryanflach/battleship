@@ -17,7 +17,7 @@ class GameBoard
   end
 
   def row(letter)
-    [letter, '', '', '', '']
+    [letter, ' ', ' ', ' ', ' ']
   end
 
   def full_board
