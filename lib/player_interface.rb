@@ -12,7 +12,7 @@ class PlayerInterface
     elsif selection == 'I' || selection == 'INSTRUCTIONS'
       puts Communication.instructions
       sleep(2)
-      main_menu
+      main_menu(player)
     elsif selection == 'P' || selection == 'PLAY'
       puts Communication.ship_placement_instructions
       first_ship = ship_placement(2, player)
@@ -21,7 +21,7 @@ class PlayerInterface
       player.place_ship(3, second_ship)
     else
       puts Communication.invalid_entry('is not a valid choice')
-      main_menu
+      main_menu(player)
     end
   end
 
@@ -57,52 +57,50 @@ class PlayerInterface
   end
 
   def self.ship_placement_verification(input, ship_size, player)
+    outcome = true
     entries = input.split
     if quitting?(input)
       puts Communication.player_quits
       exit
     elsif entries.size != ship_size
       invalid_try_again('is not the correct length')
-      return true
     elsif position_wrong_format_or_outside_range?(entries)
       invalid_try_again("should start with a letter \
 between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
-      return true
     elsif positions_include_duplicates?(entries)
       invalid_try_again('cannot include duplicates')
-      return true
     elsif position_wraps?(entries)
       invalid_try_again('wraps around the board')
-      return true
     elsif position_taken?(entries, player)
       invalid_try_again("is a location that's already taken")
-      return true
     elsif positions_not_adjacent?(entries)
       invalid_try_again("includes locations that are diagonal or \
 otherwise non-adjacent")
-      return true
     else
-      return false
+      outcome = false
     end
+    outcome
   end
 
   def self.shot_verification(location, player)
+    outcome = true
     entry = location.split
     if quitting?(location)
       puts Communication.player_quits
       exit
     elsif entry.size != 1
       invalid_try_again('should only be one location')
-      return true
+    elsif location.length != 2
+      invalid_try_again('should be two characters')
     elsif position_wrong_format_or_outside_range?(entry)
       invalid_try_again("should start with a letter \
 between 'A' and 'D' and end with a number between '1' and '4', i.e. 'A3'")
     elsif already_guessed?(location, player)
       invalid_try_again('is a location you have already guessed')
-      return true
     else
-      return false
+      outcome = false
     end
+    outcome
   end
 
   def self.invalid_try_again(reason)

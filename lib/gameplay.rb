@@ -98,6 +98,14 @@ module Gameplay
     display_map(computer)
   end
 
+  def total_shots(outcome)
+    if outcome == 'W'
+      human.shots_taken
+    else
+      computer.shots_taken
+    end
+  end
+
   def player_outcome(human_player)
     if ships_left?(human_player)
       'W'

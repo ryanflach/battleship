@@ -26,5 +26,4 @@ class Player
   def fire_shot(location)
     boards.my_hits_and_misses.valid_locations.delete(location)
   end
-
 end
